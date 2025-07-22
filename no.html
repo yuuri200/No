@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tanong</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f2f2f2;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    #videoSection {
+      display: none;
+      margin-top: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Mahal kaba?</h2>
+
+  <input type="text" id="sagot" placeholder="Ilagay ang sagot dito">
+  <button onclick="checkAnswer()">Sagutin</button>
+
+  <div id="videoSection">
+    <h3>Tama! relapse ka muna:</h3>
+    <iframe id="ytplayer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('sagot').value.trim().toLowerCase();
+      const correctAnswer = 'hindi';
+
+      if (input === correctAnswer) {
+        const videoID = 'zOl_6jp0l5U'; // Ito ang ID ng YouTube video mo
+        const iframe = document.getElementById('ytplayer');
+        iframe.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
+
+        document.getElementById('videoSection').style.display = 'block';
+      } else {
+        alert('Talaga ba mahal mo?');
+        document.getElementById('videoSection').style.display = 'none';
+        document.getElementById('ytplayer').src = '';
+      }
+    }
+  </script>
+
+</body>
+</html>

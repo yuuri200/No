@@ -32,7 +32,7 @@
 </head>
 <body>
 
-  <h2>Mahal kaba?</h2>
+  <h2>nilalamig kaba ngayon?</h2>
 
   <input type="text" id="sagot" placeholder="Ilagay ang sagot dito">
   <button onclick="checkAnswer()">Sagutin</button>
@@ -45,16 +45,16 @@
   <script>
     function checkAnswer() {
       const input = document.getElementById('sagot').value.trim().toLowerCase();
-      const correctAnswer = 'hindi';
+      const correctAnswer = 'o';
 
       if (input === correctAnswer) {
-        const videoID = 'zOl_6jp0l5U'; // Ito ang ID ng YouTube video mo
+        const videoID = 'dglBgJSMr-E'; // Ito ang ID ng YouTube video mo
         const iframe = document.getElementById('ytplayer');
         iframe.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
 
         document.getElementById('videoSection').style.display = 'block';
       } else {
-        alert('Talaga ba mahal mo?');
+        alert('Talaga lng?');
         document.getElementById('videoSection').style.display = 'none';
         document.getElementById('ytplayer').src = '';
       }
